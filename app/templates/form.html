@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-6">
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+   {% if messages %}
+      {% for category, message in messages %}
+      <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+         {{ message }}
+         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>      
+      <br>
+      {% endfor %}
+   {% endif %}
+{% endwith %}
+
+<h4 class="mb-3">Component form</h4>
+<p class="mb-0">Add new component to the library.</p>
+<hr class="my-4">
+<form action="" method="POST" novalidate>
+   {{ form.hidden_tag() }}
+   <div class="form-group row g-3">
+
+
+      <!-- Text field -->
+      <div class="col-12">
+         {{ form.name.label(class="form-label") }}
+         {% if form.name.errors %}
+            {{ form.name(class="form-control is-invalid", placeholder="Enter your name") }}
+            <div class="invalid-feedback">
+               {% for error in form.name.errors %}
+                  <span>{{ error }}</span>
+               {% endfor %}
+            </div>
+         {% else %}
+            {{ form.name(class="form-control", placeholder="Enter component name") }}
+         {% endif %}
+      </div>
+
+
+      <!-- Text field -->
+      <div class="col-12">
+         {{ form.part.label(class="form-label") }}
+         {% if form.part.errors %}
+            {{ form.part(class="form-control is-invalid", placeholder="Enter the part #") }}
+            <div class="invalid-feedback">
+               {% for error in form.part.errors %}
+                  <span>{{ error }}</span>
+               {% endfor %}
+            </div>
+         {% else %}
+            {{ form.part(class="form-control", placeholder="Enter the part #") }}
+         {% endif %}
+      </div>
+
+       <!-- Text field -->
+      <div class="col-12">
+         {{ form.description.label(class="form-label") }}
+         {% if form.description.errors %}
+            {{ form.description(class="form-control is-invalid", placeholder="Enter the part #") }}
+            <div class="invalid-feedback">
+               {% for error in form.description.errors %}
+                  <span>{{ error }}</span>
+               {% endfor %}
+            </div>
+         {% else %}
+            {{ form.description(class="form-control", placeholder="Enter the component description") }}
+         {% endif %}
+      </div>
+
+            <!-- Drop-down selection -->
+      <div class="col-12">
+         {{ form.project.label(class="form-label") }}
+         {% if form.project.errors %}
+            {{ form.project(class="form-select is-invalid") }}
+            <div class="invalid-feedback">
+               {% for error in form.project.errors %}
+                  <span>{{ error }}</span>
+               {% endfor %}
+            </div>
+         {% else %}
+            {{ form.project(class="form-select") }}
+         {% endif %}
+      </div>
+
+      <!-- Text field -->
+      <div class="col-12">
+         {{ form.location.label(class="form-label") }}
+         {% if form.location.errors %}
+            {{ form.location(class="form-control is-invalid", placeholder="Enter your name") }}
+            <div class="invalid-feedback">
+               {% for error in form.location.errors %}
+                  <span>{{ error }}</span>
+               {% endfor %}
+            </div>
+         {% else %}
+            {{ form.location(class="form-control", placeholder="Enter component name") }}
+         {% endif %}
+      </div>
+
+
+
+      <hr class="my-4">
+   </div> 
+   <div class="col-12">
+      {{ form.submit(class="w-100 btn btn-danger btn-lg") }}
+   </div>
+
+</form>
+
+        </div>
+    </div>
+           </div>
+
+{% endblock %}

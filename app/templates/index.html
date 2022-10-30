@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-6">
+
+        <h4 class="mb-0 text-center">Components Search</h4>
+
+        <hr class="my-4">
+
+
+ <!-- SEARCH FORM -->
+
+       <form action = "" method="post">
+           <div class="d-flex justify-content-center align-items-center">
+
+                      <div class="col-md-12">
+
+                        <div class="search">
+                          <i class="fa fa-search"></i>
+                          <input type="text" name="search" class="form-control" placeholder="Component search">
+                          <button type="submit" class="btn btn-dark">Search</button>
+                        </div>
+
+                      </div>
+
+                    </div>
+
+      </form>
+<br>
+                <!-- (B) OUTPUT SEARCH RESULTS -->
+{% if results | length != 0 %}
+         <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Part#</th>
+        <th scope="col">Component Description</th>
+      <th scope="col">Project</th>
+       <th scope="col">Location</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for result in results %}
+    <tr>
+      <td>{{result[1]}}</td>
+      <td>{{result[2]}}</td>
+      <td>{{result[3]}}</td>
+        <td>{{result[4]}}</td>
+        <td>{{result[5]}}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<div id="demo">No search results.</div>
+{% endif %}
+
+
+   <hr class="my-3">
+
+</div>
+    </div>
+        </div>
+
+
+{% endblock %}
