@@ -20,7 +20,7 @@ def form():
         description = form.description.data
         project = form.project.data
         location = form.location.data
-
+        date = form.date.data
         with sql.connect("database.db") as con:
             cur = con.cursor()
 
@@ -28,7 +28,7 @@ def form():
                         VALUES(?, ?, ?, ?, ?)""", (name, part, description, project, location))
 
         flash(f"Name: {name} Part # {part}, Location: {location}, Project: {project}", 'success')
-        return redirect(url_for('form'))
+        return redirect(url_for('index'))
 
     return render_template('form.html', title=title, form=form)
 

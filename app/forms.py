@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, SelectField, SubmitField, RadioField
+from wtforms import StringField, SelectField, SubmitField, RadioField, DateField
 from wtforms.validators import DataRequired
 
 # A class is created for each form required

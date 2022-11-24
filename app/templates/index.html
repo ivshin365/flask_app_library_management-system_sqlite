@@ -10,15 +10,17 @@
 
 
  <!-- SEARCH FORM -->
-
+<!--
        <form action = "" method="post">
            <div class="d-flex justify-content-center align-items-center">
 
-                      <div class="col-md-12">
+                      <div class="col-md-12 d-flex justify-content-center">
 
                         <div class="search">
                           <i class="fa fa-search"></i>
+                          <div class="t" style="width: 500px">
                           <input type="text" name="search" class="form-control" placeholder="Component search">
+                          </div>
                           <button type="submit" class="btn btn-dark">Search</button>
                         </div>
 
@@ -27,10 +29,25 @@
                     </div>
 
       </form>
+    -->
+      <form action="" method="post">
+        <div class="input-group">
+          <div class="form-outline">
+            <input type="search" id="form1" name="search" class="form-control" />
+            <label class="form-label" for="form1">Component search</label>
+          </div>
+          <button type="submit" class="btn btn-primary">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </form>
 <br>
+    </div>
                 <!-- (B) OUTPUT SEARCH RESULTS -->
+<div class="col-md-12 d-flex justify-content-center">
+
 {% if results | length != 0 %}
-         <table class="table">
+         <table class="table table-hover">
   <thead>
     <tr>
       <th scope="col">Name</th>
@@ -58,10 +75,10 @@
 
 
    <hr class="my-3">
-
+  </div>
 </div>
-    </div>
+    
         </div>
 
-
+      </div>
 {% endblock %}
