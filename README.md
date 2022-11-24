@@ -3,7 +3,7 @@
 This is a library managment system based on Flask and Sqlite3, using all the CRUD functions. 
 
 
-![Flask app](https://github.com/ivshin365/flask_app_library_management-system_sqlite/tree/master/app/static/flask_app.png)
+![Flask app](https://github.com/ivshin365/flask_app_library_management-system_sqlite/blob/master/app/static/flask_app.png)
 
 ## Python virtual environment
 Go to the project directory and execute the following command to create a Python virtual environment:
